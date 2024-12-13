@@ -1,6 +1,9 @@
 # PCIS-POC
 This is a public repository that contains web application code and configuration files related to Amazon Web Services.
 
+## Prerequisites
+* [Node.js (version 18+)](https://nodejs.org/en/download/package-manager)
+  
 ## Getting Started
 
 **Step 1:**
