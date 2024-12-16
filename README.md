@@ -47,7 +47,7 @@ Please read our [PCIS Code of Conduct](docs/Code_of_Conduct.md) which outlines o
 The development team would like to acknowledge the people who have made direct contributions to the design and code in this repository. [PCIS POC Attribution](ATTRIBUTION.txt)
  
 ## Contact
-For more information, contact.
+For more information, contact christopher.h.castillo@leidos.com.
  
 ## Support
-For technical support, please contact the CAV Support Services at .
+For technical support, please contact christopher.h.castillo@leidos.com.
