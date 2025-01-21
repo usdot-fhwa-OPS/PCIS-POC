@@ -1,16 +1,16 @@
 import { useState } from 'react'
 import './App.css'
+import { useAuthenticator } from '@aws-amplify/ui-react';
 
 function App() {
   const [count, setCount] = useState(0)
-
+  const { signOut } = useAuthenticator();
+  
   return (
     <>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
+      <main>
+        <button onClick={signOut}>Sign out</button>
+      </main>
     </>
   )
 }
