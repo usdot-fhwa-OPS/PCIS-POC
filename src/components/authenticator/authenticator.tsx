@@ -1,10 +1,19 @@
-import { Authenticator, SelectField } from '@aws-amplify/ui-react';
+import { Authenticator, SelectField, translations } from '@aws-amplify/ui-react';
+import { I18n } from 'aws-amplify/utils';
 import { Amplify } from 'aws-amplify';
 import outputs from '../../../amplify_outputs.json';
 
 import '@aws-amplify/ui-react/styles.css';
 
 Amplify.configure(outputs);
+I18n.putVocabularies(translations);
+I18n.setLanguage('en');
+
+I18n.putVocabularies({
+  en: {
+    "username is required to signUp":"Email is required to signUp"
+  },
+});
 
 const formFields = {
   signUp: {
@@ -30,6 +39,7 @@ const orgOptions = [
 const Auth = ({ children }: { children: React.ReactNode }) => {
   return (
     <Authenticator
+      loginMechanisms={['email']}
       formFields={formFields}
       components={{
         SignUp: {
