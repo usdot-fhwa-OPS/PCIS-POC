@@ -4,6 +4,7 @@ import { Amplify } from 'aws-amplify';
 import outputs from '../../../amplify_outputs.json';
 
 import '@aws-amplify/ui-react/styles.css';
+import './authStyles.css';
 
 Amplify.configure(outputs);
 I18n.putVocabularies(translations);
@@ -42,6 +43,7 @@ const orgOptions = [
 const Auth = ({ children }: { children: React.ReactNode }) => {
   return (
     <Authenticator
+      className="amplify-authenticator"
       loginMechanisms={['email']}
       formFields={formFields}
       components={{
@@ -53,11 +55,11 @@ const Auth = ({ children }: { children: React.ReactNode }) => {
                 <Authenticator.SignUp.FormFields />
 
                 {/* Append custom fields */}
-                <SelectField label="Role" name="custom:role" required>
+                <SelectField className="amplify-field" label="Role" name="custom:role" required>
                   {roleOptions}
                 </SelectField>
 
-                <SelectField label="Your Organization" name="custom:organization" required>
+                <SelectField className="amplify-field" label="Your Organization" name="custom:organization" required>
                   {orgOptions}
                 </SelectField>
               </>
