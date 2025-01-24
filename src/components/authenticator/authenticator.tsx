@@ -11,7 +11,10 @@ I18n.setLanguage('en');
 
 I18n.putVocabularies({
   en: {
-    "username is required to signUp":"Email is required to signUp"
+    "username is required to signUp":"Email is required to signUp",
+    "Attributes did not conform to the schema: phoneNumbers: The attribute phoneNumbers is required, name.formatted: The attribute name.formatted is required":"Phone Number and Full Name are required to signUp",
+    "Attributes did not conform to the schema: name.formatted: The attribute name.formatted is required": "Full name is required to signUp",
+    "Attributes did not conform to the schema: phoneNumbers: The attribute phoneNumbers is required": "Phone number is required to signUp"
   },
 });
 
