@@ -5,7 +5,6 @@ This is a public repository that contains web application code and configuration
 * [Node.js (version 18+)](https://nodejs.org/en/download/package-manager)
   
 ## Getting Started
-
 **Step 1:**
 
 Download or clone this repo by using the link below:
@@ -22,10 +21,69 @@ Go to project root and execute the following command in console to install the r
 npm install
 ```
 
+## Instructions for Local Deployment
+**Step 1:**
+
+Request an AWS account with the `AmplifyBackendDeployFullAccess` managed policy, ensuring you retrieve the username, session url, and region.
+
+[Read more](https://docs.amplify.aws/react/start/account-setup/)
+
+**Step 2:**
+
+Install the AWS CLI.
+
+[Read more](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 
 **Step 3:**
 
-Execute the following command in console to run the project's development server on localhost
+Access your AWS account via the AWS CLI by running the following commandm in terminal: 
+```
+aws configure sso
+```
+
+Terminal output example with suggested input:
+```
+SSO session name (Recommended): username from above
+SSO start URL: session url from above
+SSO region: us-east-1
+SSO registration scopes [sso:account:access]: <leave blank>
+Attempting to automatically open the SSO authorization page in your default browser.
+If the browser does not open or you wish to use a different device to authorize this request, open the following URL:
+
+ https://device.sso.us-east-2.amazonaws.com/
+
+ Then enter the code:
+
+ SOME-CODE
+
+## browser opens
+
+The only AWS account available to you is: <your-aws-account-id>
+Using the account ID <your-aws-account-id>
+The only role available to you is: amplify-policy
+Using the role name "amplify-policy"
+CLI default client Region [us-east-1]: us-east-1
+CLI default output format [None]: hit enter
+CLI profile name [amplify-policy-<your-aws-account-id>]: default
+
+To use this profile, specify the profile name using --profile, as shown:
+aws s3 ls --profile default
+```
+
+*[Read more](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+
+**Step 4:**
+
+Execute the following command in terminal Run a cloud development sandbox environment, which deploys a high-fidelity AWS backend locally: 
+```
+npx ampx sandbox --profile <profile-name>
+```
+
+The `amplify_outputs.json` file should be written/updated.
+
+**Step 5:**
+
+With the command from Step 4 still running, execute the following command seperately to run the frontend project's development server on localhost:
 
 ```
 npm run dev

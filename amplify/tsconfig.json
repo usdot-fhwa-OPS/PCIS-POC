@@ -13,5 +13,6 @@
         "../.amplify/generated/*"
       ]
     }
-  }
+  },
+  "exclude": ["amplify/**/*"]
 }
