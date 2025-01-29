@@ -12,6 +12,10 @@ I18n.setLanguage('en');
 
 I18n.putVocabularies({
   en: {
+    "Given Name": "First Name",
+    "Enter your Given Name": "Enter your First Name",
+    "Family Name": "Last Name",
+    "Enter your Family Name": "Enter your Last Name",
     "username is required to signUp":"Email is required to signUp",
     "Attributes did not conform to the schema: phoneNumbers: The attribute phoneNumbers is required, name.formatted: The attribute name.formatted is required":"Phone Number and Full Name are required to signUp",
     "Attributes did not conform to the schema: name.formatted: The attribute name.formatted is required": "Full name is required to signUp",
@@ -21,11 +25,12 @@ I18n.putVocabularies({
 
 const formFields = {
   signUp: {
-    name: { order: 1 },
-    email: { order: 2 },
-    phone_number: { order: 3 },
-    password: { order: 4 },
-    confirm_password: { order: 5 },
+    given_name: { order: 1 },
+    family_name: { order: 2 },
+    email: { order: 3 },
+    phone_number: { order: 4 },
+    password: { order: 5 },
+    confirm_password: { order: 6 },
   },
 };
 
