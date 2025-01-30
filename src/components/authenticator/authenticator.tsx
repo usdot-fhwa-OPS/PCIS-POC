@@ -35,7 +35,7 @@ const formFields = {
 };
 
 const roleOptions = [
-  <option key="Benficiary Cargo Owner" value="Benficiary Cargo Owner">Benficiary Cargo Owner</option>,
+  <option key="Beneficiary Cargo Owner" value="Beneficiary Cargo Owner">Beneficiary Cargo Owner</option>,
   <option key="Vessel Operator" value="Vessel Operator">Vessel Operator</option>,
   <option key="Transportation Operator" value="Transportation Operator">Transportation Operator</option>,
   <option key="Terminal Operator" value="Terminal Operator">Terminal Operator</option>,
