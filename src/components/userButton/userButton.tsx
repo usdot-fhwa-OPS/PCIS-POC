@@ -1,4 +1,5 @@
 import { ChevronDown } from 'lucide-react';
+import './userButtonStyles.css';
 
 interface UserButtonProps {
   fullName: string;
