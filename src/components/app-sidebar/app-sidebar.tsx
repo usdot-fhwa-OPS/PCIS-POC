@@ -16,6 +16,9 @@ import { Button } from "../ui/button";
 
 import { useAuthenticator } from "@aws-amplify/ui-react";
 
+import { fetchUserAttributes } from 'aws-amplify/auth';
+import { useEffect, useState } from "react";
+
 // Menu items.
 const items = [
   {
@@ -51,7 +54,48 @@ const items = [
 ]
 
 export function AppSidebar() {
-  const { signOut } = useAuthenticator();
+  const { user, signOut } = useAuthenticator();
+
+  const [role, setRole] = useState<{ role: string }>({ role: '' });
+
+  useEffect(() => {
+    async function getRole() {
+      if (user) {
+        try {
+          // fetchUserAttributes returns an array of objects with Name and Value properties.
+          const attributes = await fetchUserAttributes();
+          const roleAttribute = attributes['custom:role'] ?? 'No role assigned';
+          setRole({ role: roleAttribute });
+        } catch (error) {
+          console.error("Error fetching user attributes", error);
+        }
+      }
+    }
+
+    getRole();
+  }, [user, fetchUserAttributes]);
+
+  // Define which menu items are allowed for limited roles.
+  const allowedForLimitedRoles = ["Home", "Booking Status", "Notifications"];
+
+  // Filter menu items based on the custom role.
+  const filteredItems = items.filter((item) => {
+    if (role.role === "Terminal Operator") {
+      // Terminal Operators have access to all items.
+      return true;
+    }
+
+    if (
+      role.role === "Transporation Operator" ||
+      role.role === "Beneficiary Cargo Owner"
+    ) {
+      // These roles only have access to the allowed items.
+      return allowedForLimitedRoles.includes(item.title);
+    }
+
+    // If role is undefined or unrecognized, do not show any items.
+    return false;
+  });
 
   return (
     <Sidebar>
@@ -60,7 +104,7 @@ export function AppSidebar() {
           <SidebarGroupLabel>PCIS POC</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {items.map((item) => (
+              {filteredItems.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
                     <a href={item.url}>
