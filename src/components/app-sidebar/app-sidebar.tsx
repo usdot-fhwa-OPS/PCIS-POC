@@ -86,7 +86,7 @@ export function AppSidebar() {
     }
 
     if (
-      role.role === "Transporation Operator" ||
+      role.role === "Transportation Operator" ||
       role.role === "Beneficiary Cargo Owner"
     ) {
       // These roles only have access to the allowed items.
