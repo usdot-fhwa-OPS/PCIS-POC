@@ -2,7 +2,10 @@ import './App.css';
 import { useAuthenticator } from '@aws-amplify/ui-react';
 import { fetchUserAttributes } from 'aws-amplify/auth';
 import { useEffect, useState } from 'react';
+import { SidebarProvider, SidebarTrigger } from "./components/ui/sidebar";
+import { AppSidebar } from "./components/app-sidebar/app-sidebar"
 import UserButton from './components/userButton/userButton';
+import './index.css';
 
 interface UserAttributes {
   given_name?: string;
@@ -11,7 +14,7 @@ interface UserAttributes {
 }
 
 function App() {
-  const { user, signOut } = useAuthenticator();
+  const { user } = useAuthenticator();
   const [userAttributes, setUserAttributes] = useState<{ fullName: string; role: string }>({ fullName: '', role: '' });
   
   useEffect(() => {
@@ -25,7 +28,7 @@ function App() {
 
         setUserAttributes({
           fullName,
-          role: attributes['custom:role'] || 'No role assigned',
+          role: attributes['custom:role'] ?? 'No role assigned',
         });
       } catch (error) {
         console.error('Error fetching user attributes:', error);
@@ -38,12 +41,13 @@ function App() {
   }, [user]);
 
   return (
-    <>
+    <SidebarProvider>
+      <AppSidebar />
       <main>
+        <h3>Home</h3>
         <UserButton fullName={userAttributes.fullName} role={userAttributes.role} />
-        <button onClick={signOut} style={{ marginTop: '20px' }}>Sign out</button>
       </main>
-    </>
+    </SidebarProvider>
   );
 }
 
