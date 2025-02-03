@@ -5,7 +5,6 @@ import { StrictMode } from 'react'
 // Import the generated route tree
 import { routeTree } from './routeTree.gen'
 
-import App from './App.tsx'
 import Auth from './components/authenticator/authenticator.tsx'
 import './index.css'
 
