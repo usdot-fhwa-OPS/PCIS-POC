@@ -26,9 +26,9 @@ export default function Operators() {
   }
 
   return (
-    <div className="h-screen w-screen overflow-x-auto">
-      <h1 className="text-2xl font-bold mb-4 text-center">Available Users</h1>
-      <div className="w-full max-w-full overflow-x-auto">
+    <div>
+      <h1 className="text-2xl font-bold text-center">Available Users</h1>
+      <div>
         <DataTable columns={columns} data={data} />
       </div>
     </div>
