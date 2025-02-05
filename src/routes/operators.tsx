@@ -1,13 +1,77 @@
 import { createFileRoute } from '@tanstack/react-router'
+import { User, columns } from "../components/users/columns"
+import { DataTable } from "../components/users/users-table"
+import { useEffect, useState } from "react"
+
 
 export const Route = createFileRoute('/operators')({
   component: Operators,
 })
 
-function Operators() {
+export default function Operators() {
+  const [data, setData] = useState<User[]>([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    async function fetchData() {
+      const result = await getData()
+      setData(result)
+      setLoading(false)
+    }
+    fetchData()
+  }, [])
+
+  if (loading) {
+    return <div>Loading...</div>
+  }
+
   return (
-    <div className="p-2">
-      <h3>Operators Page</h3>
+    <div className="h-screen w-screen overflow-x-auto">
+      <h1 className="text-2xl font-bold mb-4 text-center">Available Users</h1>
+      <div className="w-full max-w-full overflow-x-auto">
+        <DataTable columns={columns} data={data} />
+      </div>
     </div>
   )
 }
+
+
+async function getData(): Promise<User[]> {
+  // Replace with API Calls
+  return [
+    {
+      name: "John Doe",
+      role: "BCO",
+      organization: "Leidos",
+      email: "johndoe@leidos.com",
+      phone: "123-456-7890",
+      status: "Approved"
+    },
+    {
+      name: "Bob Doe",
+      role: "BCO",
+      organization: "Leidos",
+      email: "johndoe@leidos.com",
+      phone: "123-456-7890",
+      status: "Approved"
+    },
+    {
+      name: "John Doe",
+      role: "BCO",
+      organization: "Leidos",
+      email: "johndoe@leidos.com",
+      phone: "123-456-7890",
+      status: "Approved"
+    },
+    {
+      name: "John Doe",
+      role: "BCO",
+      organization: "Leidos",
+      email: "johndoe@leidos.com",
+      phone: "123-456-7890",
+      status: "Approved"
+    },
+
+  ]
+}
+
