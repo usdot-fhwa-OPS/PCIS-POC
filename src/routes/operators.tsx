@@ -50,24 +50,24 @@ async function getData(): Promise<User[]> {
     {
       name: "Bob Doe",
       role: "BCO",
-      organization: "Leidos",
-      email: "johndoe@leidos.com",
+      organization: "Port Authority NYNJ",
+      email: "bobdoe@panynj.com",
       phone: "123-456-7890",
       status: "Approved"
     },
     {
-      name: "John Doe",
+      name: "Adam Smith",
       role: "BCO",
-      organization: "Leidos",
-      email: "johndoe@leidos.com",
+      organization: "Port of Virginia",
+      email: "adamsmith@portva.com",
       phone: "123-456-7890",
       status: "Approved"
     },
     {
-      name: "John Doe",
+      name: "Jane Wilson",
       role: "BCO",
-      organization: "Leidos",
-      email: "johndoe@leidos.com",
+      organization: "CSX",
+      email: "janewilson@csx.com",
       phone: "123-456-7890",
       status: "Approved"
     },
