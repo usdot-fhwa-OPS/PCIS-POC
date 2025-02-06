@@ -21,13 +21,16 @@ const dummyData2 = [
 
 function RouteComponent(){
   return (
-    <div className="p-6 w-full">
+    <div className="w-full">
       <Tabs defaultValue="requested" className="">
+        <div>
       <TabsList className="mb-4 flex w-full justify-start gap-x-4">
           <TabsTrigger value="requested">Requested</TabsTrigger>
           <TabsTrigger value="ongoing">Ongoing</TabsTrigger>
           <TabsTrigger value="completed">Completed</TabsTrigger>
         </TabsList>
+        </div>
+        <div>
         <TabsContent value="requested">
           <TerminalBookingsTable data={dummyData} status="Requested" />
         </TabsContent>
@@ -37,6 +40,7 @@ function RouteComponent(){
         <TabsContent value="completed">
           <OnGoingBooking data={dummyData2} status="Ongoing" />
         </TabsContent>
+        </div>
       </Tabs>
     </div>
   );
