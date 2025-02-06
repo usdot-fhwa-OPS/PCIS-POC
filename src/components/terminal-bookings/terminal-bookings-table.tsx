@@ -14,7 +14,7 @@ export function TerminalBookingsTable({ data, status }: TerminalBookingsTablePro
   );
 }
 
-  export function TerminalBookingsCompleted({ data, status }: TerminalBookingsTableProps) {
+  export function TerminalBookingsCompleted({ data}: TerminalBookingsTableProps) {
     return (
       <div className="container mx-auto p-10">
         <DataTable columns={CompletedColumn()} data={data} />
