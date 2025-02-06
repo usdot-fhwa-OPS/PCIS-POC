@@ -59,18 +59,18 @@ export const columns : ColumnDef<Cargo>[] = [
     {
         accessorKey: "status",
         header: () => <div className="text-center">Cargo Status</div>,
-        cell: () => { 
-            const [status, setStatus] = useState("Cargo Status")
+        cell: ({ row }) => { 
+            const [cargoStatus, setStatus] = useState(row.original.status)
 
             return (
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant="outline">{status}</Button>
+                    <Button variant="outline">{cargoStatus}</Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className="w-56">
                     <DropdownMenuLabel>Cargo Status</DropdownMenuLabel>
                     <DropdownMenuSeparator />
-                    <DropdownMenuRadioGroup value={status} onValueChange={setStatus}>
+                    <DropdownMenuRadioGroup value={cargoStatus} onValueChange={setStatus}>
                       <DropdownMenuRadioItem value="On Ship">On Ship</DropdownMenuRadioItem>
                       <DropdownMenuRadioItem value="On Dock">On Dock</DropdownMenuRadioItem>
                     </DropdownMenuRadioGroup>
