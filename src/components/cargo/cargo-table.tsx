@@ -64,7 +64,7 @@ export function DataTable<TData, TValue>({
       </div>
 
     <div className="rounded-md border">
-      <Table className="w-full table-fixed">
+      <Table className="w-full table-fixed text-center">
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow key={headerGroup.id}>
@@ -106,10 +106,6 @@ export function DataTable<TData, TValue>({
           )}
         </TableBody>
       </Table>
-    </div>
-    <div className="flex-1 text-sm text-muted-foreground">
-      {table.getFilteredSelectedRowModel().rows.length} of{" "}
-      {table.getFilteredRowModel().rows.length} row(s) selected.
     </div>
   </div>
   )

@@ -24,31 +24,11 @@ export type Cargo = {
     bco_email: string
     operator: string
     operator_email: string
-    status: "On Ship" | "On Dock" // updated to match dropdown menu options
-    flag: boolean // added flag property
+    status: "On Ship" | "On Dock"
+    flag: boolean
 }
 
 export const columns : ColumnDef<Cargo>[] = [
-    {
-        id: "select",
-        header: ({ table }) => (
-          <Checkbox
-            checked={
-              table.getIsAllPageRowsSelected() ||
-              (table.getIsSomePageRowsSelected() && "indeterminate")
-            }
-            onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-            aria-label="Select all"
-          />
-        ),
-        cell: ({ row }) => (
-          <Checkbox
-            checked={row.getIsSelected()}
-            onCheckedChange={(value) => row.toggleSelected(!!value)}
-            aria-label="Select row"
-          />
-        ),
-    },
     {
         accessorKey: "vesselID",
         header: () => <div className="text-center">Vessel ID</div>,
