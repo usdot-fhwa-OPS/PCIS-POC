@@ -10,7 +10,7 @@ export type User = {
     email : string
     phone : string
     status : "Approved"
-}
+} 
 
 export const columns : ColumnDef<User>[] = [
     {

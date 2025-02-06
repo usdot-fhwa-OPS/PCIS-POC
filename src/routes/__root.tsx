@@ -55,12 +55,14 @@ function RootComponent() {
     }, [user]);
 
     return (
+      <div className="flex min-h-screen bg-background">
         <SidebarProvider>
             <AppSidebar />
-            <main>
+              <div className="flex-1">
                 <UserButton fullName={userAttributes.fullName} role={userAttributes.role} />
                 <Outlet />
-            </main>
+              </div>
         </SidebarProvider>
+      </div>
     )
 }
