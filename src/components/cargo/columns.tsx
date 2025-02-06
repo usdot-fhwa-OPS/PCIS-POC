@@ -4,7 +4,6 @@ import { ColumnDef } from "@tanstack/react-table"
 import { Flag } from "lucide-react"
 import { useState } from "react"
 import { Button } from "../ui/button"
-import { Checkbox } from "@/components/ui/checkbox"
 
 import {
     DropdownMenu,
