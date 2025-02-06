@@ -40,13 +40,59 @@ async function getData(): Promise<Cargo[]> {
   // Replace with API Calls
   return [
     {
+      vesselID: 456,
+      containerID: "HM-7829",
+      origin: "Boston",
+      bco: "John Doe",
+      bco_email: "johndoe@leidos.com",
+      operator: "Person1",
+      operator_email: "person1@shipping.com",
+      status: "On Ship",
+      flag : false
+    },
+    {
+      vesselID: 1236,
+      containerID: "US-198",
+      origin: "Shanghai",
+      bco: "BCO",
+      bco_email: "Leidos",
+      operator: "johndoe@leidos.com",
+      operator_email: "1234567890",
+      status: "On Ship",
+      flag : false
+    },
+    {
+      vesselID: 456,
+      containerID: "123456",
       origin: "John Doe",
       bco: "BCO",
       bco_email: "Leidos",
       operator: "johndoe@leidos.com",
       operator_email: "1234567890",
-      status: "Approved",
-      //flag : false
+      status: "On Ship",
+      flag : false
+    },
+    {
+      vesselID: 456,
+      containerID: "GM-267",
+      origin: "John Doe",
+      bco: "BCO",
+      bco_email: "Leidos",
+      operator: "johndoe@leidos.com",
+      operator_email: "1234567890",
+      status: "On Ship",
+      flag : false
+    },
+    {
+      vesselID: 456,
+      containerID: "HM-11",
+      origin: "John Doe",
+      bco: "BCO",
+      bco_email: "Leidos",
+      operator: "johndoe@leidos.com",
+      operator_email: "1234567890",
+      status: "On Ship",
+      flag : false
     },
 
   ]

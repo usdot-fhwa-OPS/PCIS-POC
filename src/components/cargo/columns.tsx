@@ -1,10 +1,10 @@
 "use client"
 
 import { ColumnDef } from "@tanstack/react-table"
-import { Badge } from "../ui/badge"
 import { Flag } from "lucide-react"
 import { useState } from "react"
 import { Button } from "../ui/button"
+import { Checkbox } from "@/components/ui/checkbox"
 
 import {
     DropdownMenu,
@@ -17,6 +17,8 @@ import {
   } from "@/components/ui/dropdown-menu"
 
 export type Cargo = {
+    vesselID : number
+    containerID : string
     origin: string
     bco: string
     bco_email: string
@@ -27,6 +29,34 @@ export type Cargo = {
 }
 
 export const columns : ColumnDef<Cargo>[] = [
+    {
+        id: "select",
+        header: ({ table }) => (
+          <Checkbox
+            checked={
+              table.getIsAllPageRowsSelected() ||
+              (table.getIsSomePageRowsSelected() && "indeterminate")
+            }
+            onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+            aria-label="Select all"
+          />
+        ),
+        cell: ({ row }) => (
+          <Checkbox
+            checked={row.getIsSelected()}
+            onCheckedChange={(value) => row.toggleSelected(!!value)}
+            aria-label="Select row"
+          />
+        ),
+    },
+    {
+        accessorKey: "vesselID",
+        header: () => <div className="text-center">Vessel ID</div>,
+    },
+    {
+        accessorKey: "containerID",
+        header: () => <div className="text-center">Container ID</div>,
+    },
     {
         accessorKey: "origin",
         header: () => <div className="text-center">Origin</div>,
