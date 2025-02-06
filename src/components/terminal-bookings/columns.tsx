@@ -11,7 +11,9 @@ export const columns = (status: string): ColumnDef<any>[] => {
     { accessorKey: "containerId", header: "Container ID" },
     { accessorKey: "origin", header: "Origin" },
     { accessorKey: "bco", header: "BCO" },
+    { accessorKey: "bco_email", header: "BCO Email" },
     { accessorKey: "operator", header: "Transportation Operator" },
+    { accessorKey: "operator_email", header: "Transportation Operator Email" },
     { accessorKey: "date", header: "Date Requested" },
     { accessorKey: "time", header: "Time Requested" },
 
@@ -94,7 +96,9 @@ export const CompletedColumn = (): ColumnDef<any>[] => {
     { accessorKey: "containerId", header: "Container ID" },
     { accessorKey: "origin", header: "Origin" },
     { accessorKey: "bco", header: "BCO" },
+    { accessorKey: "bco_email", header: "BCO Email" },
     { accessorKey: "operator", header: "Transportation Operator" },
+    { accessorKey: "operator_email", header: "Transportation Operator Email" },
     { accessorKey: "date_init", header: "Date Initiated" },
     { accessorKey: "date_approved", header: "Date Approved" },
     { accessorKey: "date_picked", header: "Date Picked Up" },
@@ -106,7 +110,7 @@ export const CompletedColumn = (): ColumnDef<any>[] => {
         const isLate = status === "Late"; // Check if status is "Late"
 
         return (
-          <span className={`px-2 py-1 rounded-md ${isLate ? "bg-red-500 text-white" : "bg-gray-200"}`}>
+          <span className={`px-2 py-1 rounded-md ${isLate ? "bg-red-500 text-white" : "bg-gray-200"} text-center block`}>
             {status}
           </span>
         );
