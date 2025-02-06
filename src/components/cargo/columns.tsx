@@ -13,7 +13,7 @@ import {
     DropdownMenuRadioItem,
     DropdownMenuSeparator,
     DropdownMenuTrigger,
-  } from "@/components/ui/dropdown-menu"
+  } from "../ui/dropdown-menu"
 
 export type Cargo = {
     vesselID : number
