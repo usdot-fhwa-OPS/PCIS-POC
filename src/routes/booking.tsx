@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import {TerminalBookingsTable,OnGoingBooking} from "../components/terminal-bookings/terminal-bookings-table.tsx"
+import {TerminalBookingsTable,TerminalBookingsCompleted} from "../components/terminal-bookings/terminal-bookings-table.tsx"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs.tsx";
 
 export const Route = createFileRoute('/booking')({
@@ -38,7 +38,7 @@ function RouteComponent(){
           <TerminalBookingsTable data={dummyData} status="Ongoing" />
         </TabsContent>
         <TabsContent value="completed">
-          <OnGoingBooking data={dummyData2} status="Ongoing" />
+          < TerminalBookingsCompleted data={dummyData2} status="Completed"/>
         </TabsContent>
         </div>
       </Tabs>
