@@ -104,7 +104,6 @@ export const columns : ColumnDef<Cargo>[] = [
         cell: ({ row }) => {
           const email = row.original.bco_email
       
-          // Option A: Anchor tag wrapping a Button
           return (
             <a
               href={`mailto:${email}?subject=Inquiry%20About%20Cargo&body=Hello%20${row.original.bco},`}
