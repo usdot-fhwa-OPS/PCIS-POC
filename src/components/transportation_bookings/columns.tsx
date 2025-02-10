@@ -13,9 +13,9 @@ export const columns = (): ColumnDef<any>[] => {
     { accessorKey: "containerId", header: "Container ID" },
     { accessorKey: "origin", header: "Origin" },
     { accessorKey: "bco", header: "BCO" },
-    // { accessorKey: "bco_email", header: "BCO Email" },
+     { accessorKey: "bco_email", header: "BCO Email" },
     { accessorKey: "operator", header: "Terminal  Operator" },
-    // { accessorKey: "operator_email", header: "Transportation Operator Email" },
+    { accessorKey: "operator_email", header: "Transportation Operator Email" },
     { accessorKey: "date", header: "Date Requested" },
     { accessorKey: "time", header: "Time Requested" },
     {
@@ -82,7 +82,9 @@ export const CompletedColumn = (): ColumnDef<any>[] => {
     { accessorKey: "containerId", header: "Container ID" },
     { accessorKey: "origin", header: "Origin" },
     { accessorKey: "bco", header: "BCO" },
+    { accessorKey: "bco_email", header: "BCO Email" },
     { accessorKey: "operator", header: "Terminal  Operator" },
+    { accessorKey: "operator_email", header: "Transportation Operator Email" },
     {
       accessorKey: "status",
       header: "Booking Status",
@@ -113,7 +115,9 @@ export const OngoingColumn = (): ColumnDef<any>[] => {
     { accessorKey: "containerId", header: "Container ID" },
     { accessorKey: "origin", header: "Origin" },
     { accessorKey: "bco", header: "BCO" },
-    { accessorKey: "operator", header: "Terminal  Operator" },
+    { accessorKey: "bco_email", header: "BCO Email" },
+    { accessorKey: "operator", header: "Transportation Operator" },
+    { accessorKey: "operator_email", header: "Transportation Operator Email" },
     { accessorKey: "date_init", header: "Date Initiated" },
     { accessorKey: "date_updated", header: "Latest Update" },
     {
