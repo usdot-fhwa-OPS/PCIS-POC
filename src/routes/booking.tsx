@@ -73,7 +73,7 @@ const Transportation_CompletedData = [
 
 
 function RouteComponent(){
-    const { user, signOut } = useAuthenticator();
+    const { user} = useAuthenticator();
 
    const [role, setRole] = useState<{ role: string }>({ role: '' });
   
