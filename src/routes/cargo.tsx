@@ -48,7 +48,8 @@ async function getData(): Promise<Cargo[]> {
       operator: "Person1",
       operator_email: "person1@shipping.com",
       status: "On Ship",
-      flag : false
+      flag : false,
+      contact: "" // Can be removed once contact button is moved to proper place
     },
     {
       vesselID: 1236,
@@ -59,7 +60,8 @@ async function getData(): Promise<Cargo[]> {
       operator: "Bob Smith",
       operator_email: "bobsmith@transport.com",
       status: "On Dock",
-      flag : false
+      flag : false,
+      contact : ""
     },
     {
       vesselID: 88,
@@ -70,7 +72,8 @@ async function getData(): Promise<Cargo[]> {
       operator: "John Doe",
       operator_email: "johndoe@leidos.com",
       status: "On Dock",
-      flag : false
+      flag : false,
+      contact: ""
     },
     {
       vesselID: 1,
@@ -81,7 +84,8 @@ async function getData(): Promise<Cargo[]> {
       operator: "Allison Smith",
       operator_email: "allisonsmith@leidos.com",
       status: "On Ship",
-      flag : false
+      flag : false,
+      contact: ""
     },
     {
       vesselID: 346,
@@ -92,7 +96,8 @@ async function getData(): Promise<Cargo[]> {
       operator: "Jane Doe",
       operator_email: "janedoe@leidos.com",
       status: "On Ship",
-      flag : false
+      flag : false,
+      contact: ""
     },
 
   ]
