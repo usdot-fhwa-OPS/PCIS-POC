@@ -25,6 +25,7 @@ export type Cargo = {
     operator_email: string
     status: "On Ship" | "On Dock"
     flag: boolean
+    contact: string // Temporarily putting this here to add contact button
 }
 
 export const columns : ColumnDef<Cargo>[] = [
@@ -96,4 +97,21 @@ export const columns : ColumnDef<Cargo>[] = [
             )
         },
     },
+    // Temporary column to add contact button
+    {
+        id: "contact",
+        header: () => <div className="text-center">Contact</div>,
+        cell: ({ row }) => {
+          const email = row.original.bco_email
+      
+          // Option A: Anchor tag wrapping a Button
+          return (
+            <a
+              href={`mailto:${email}?subject=Inquiry%20About%20Cargo&body=Hello%20${row.original.bco},`}
+            >
+              <Button variant="outline">Contact</Button>
+            </a>
+          )
+        },
+      }
 ]
