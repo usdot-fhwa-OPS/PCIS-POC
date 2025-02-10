@@ -15,10 +15,10 @@ const schema = a.schema({
       bcoEmail: a.string(),
       origin: a.string(),
       destination: a.string(),
-      eta: a.string(),
+      arrivalDate: a.string(),
       transopName: a.string(),
       transopEmail: a.string(),
-      containerStatus: a.string(),
+      containerStatus: a.string().default('On-Ship'),
       assignmentStatus: a.string().default('unassigned'),
       assignmentDate: a.string(),
       bookingStatus: a.string(),
@@ -27,6 +27,7 @@ const schema = a.schema({
       bookingLatestUpdateDate: a.string(),
       bookingApprovalDate: a.string(),
       bookingPickupDate: a.string(),
+      flag: a.boolean().default(false),
     })
     .authorization((allow) => [allow.guest()]),
 });
