@@ -7,9 +7,27 @@ specifies that any unauthenticated user can "create", "read", "update",
 and "delete" any "Todo" records.
 =========================================================================*/
 const schema = a.schema({
-  Todo: a
+  Container: a
     .model({
-      content: a.string(),
+      vesselID: a.string(),
+      containerID: a.string(),
+      bcoName: a.string(),
+      bcoEmail: a.string(),
+      origin: a.string(),
+      destination: a.string(),
+      arrivalDate: a.string(),
+      transopName: a.string(),
+      transopEmail: a.string(),
+      containerStatus: a.string().default('On-Ship'),
+      assignmentStatus: a.string().default('unassigned'),
+      assignmentDate: a.string(),
+      bookingStatus: a.string(),
+      bookingDate: a.string(),
+      bookingTime: a.string(),
+      bookingLatestUpdateDate: a.string(),
+      bookingApprovalDate: a.string(),
+      bookingPickupDate: a.string(),
+      flag: a.boolean().default(false),
     })
     .authorization((allow) => [allow.guest()]),
 });
