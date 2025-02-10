@@ -20,5 +20,5 @@ export function TerminalBookingsTable({ data, status }: TerminalBookingsTablePro
         <DataTable columns={CompletedColumn()} data={data} />
       </div>
     );
-  
+
 }
